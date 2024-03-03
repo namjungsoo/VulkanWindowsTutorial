@@ -30,6 +30,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     // 5. create logical device
     createLogicalDevice();
 
+    // 6. create swap chain
+    createSwapChain();
+
     MSG msg = {};
 
     // Main message loop:
