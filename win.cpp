@@ -4,8 +4,8 @@
 
 // Global Variables:
 HINSTANCE hInst;                                // current instance
-WCHAR szTitle[MAX_LOADSTRING];                  // The title bar text
-WCHAR szWindowClass[MAX_LOADSTRING];            // the main window class name
+WCHAR szTitle[MAX_LOADSTRING] = L"Title";                  // The title bar text
+WCHAR szWindowClass[MAX_LOADSTRING] = L"WindowClass";            // the main window class name
 
 //
 //  FUNCTION: MyRegisterClass()

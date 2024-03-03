@@ -7,6 +7,14 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     _In_ LPWSTR    lpCmdLine,
     _In_ int       nCmdShow)
 {
+    MyRegisterClass(hInstance);
+
+    // Perform application initialization:
+    if (!InitInstance(hInstance, nCmdShow))
+    {
+        return FALSE;
+    }
+
     // 1. enum instance layers
 
     // 2. create instance
@@ -18,7 +26,20 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     // 4. create logical device
     createLogicalDevice();
 
+    MSG msg = {};
+
+    // Main message loop:
+    while (GetMessage(&msg, nullptr, 0, 0))
+    {
+        if (!TranslateAccelerator(msg.hwnd, nullptr, &msg))
+        {
+            TranslateMessage(&msg);
+            DispatchMessage(&msg);
+        }
+    }
+
     // 99. clean up
     vkDestroyInstance(instance, nullptr);
-	return 0;
+
+    return (int)msg.wParam;
 }
