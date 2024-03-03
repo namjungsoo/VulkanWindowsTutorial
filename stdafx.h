@@ -6,9 +6,11 @@
 #include <vector>
 #include <optional>
 #include <stdexcept>
+#include <set>
 using namespace std;
 
 void createInstance();
+void createSurface(HINSTANCE hInstance, HWND hWnd);
 void createDevice();
 void createLogicalDevice();
 

@@ -4,6 +4,8 @@
 
 // Global Variables:
 HINSTANCE hInst;                                // current instance
+HWND hWnd;
+
 WCHAR szTitle[MAX_LOADSTRING] = L"Title";                  // The title bar text
 WCHAR szWindowClass[MAX_LOADSTRING] = L"WindowClass";            // the main window class name
 
@@ -47,7 +49,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
     hInst = hInstance; // Store instance handle in our global variable
 
-    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
+    hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
     if (!hWnd)

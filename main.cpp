@@ -1,6 +1,7 @@
 #include "stdafx.h"
 
 extern VkInstance instance;
+extern HWND hWnd;
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     _In_opt_ HINSTANCE hPrevInstance,
@@ -20,10 +21,13 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     // 2. create instance
     createInstance();
 
-    // 3. create device
+    // 2. create surface
+    createSurface(hInstance, hWnd);
+
+    // 4. create device
     createDevice();
 
-    // 4. create logical device
+    // 5. create logical device
     createLogicalDevice();
 
     MSG msg = {};
