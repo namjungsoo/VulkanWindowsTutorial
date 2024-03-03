@@ -20,6 +20,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     // 2. create instance
     createInstance();
+    setupDebugMessenger();
 
     // 2. create surface
     createSurface(hInstance, hWnd);
@@ -46,7 +47,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     }
 
     // 99. clean up
-    vkDestroyInstance(instance, nullptr);
+    cleanup();
 
     return (int)msg.wParam;
 }

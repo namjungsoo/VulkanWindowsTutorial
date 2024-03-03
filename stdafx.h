@@ -11,13 +11,16 @@
 #include <set>
 #include <algorithm>
 #include <limits>
+#include <iostream>
 using namespace std;
 
 void createInstance();
+void cleanup();
 void createSurface(HINSTANCE hInstance, HWND hWnd);
 void createDevice();
 void createLogicalDevice();
 void createSwapChain();
+void setupDebugMessenger();
 
 // Forward declarations of functions included in this code module:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
